@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C38C181222EE42E003BE3C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C180222EE42E003BE3C8 /* AppDelegate.swift */; };
+		4C38C183222EE42E003BE3C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C182222EE42E003BE3C8 /* ViewController.swift */; };
+		4C38C186222EE42E003BE3C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C38C184222EE42E003BE3C8 /* Main.storyboard */; };
+		4C38C189222EE42E003BE3C8 /* AcronisSample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C187222EE42E003BE3C8 /* AcronisSample.xcdatamodeld */; };
+		4C38C18B222EE438003BE3C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C38C18A222EE438003BE3C8 /* Assets.xcassets */; };
+		4C38C18E222EE438003BE3C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C38C18C222EE438003BE3C8 /* LaunchScreen.storyboard */; };
+		4C38C199222EE438003BE3C8 /* AcronisSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C198222EE438003BE3C8 /* AcronisSampleTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C38C195222EE438003BE3C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C38C175222EE42E003BE3C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C38C17C222EE42E003BE3C8;
+			remoteInfo = AcronisSample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C38C17D222EE42E003BE3C8 /* AcronisSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AcronisSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C38C180222EE42E003BE3C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C38C182222EE42E003BE3C8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C38C185222EE42E003BE3C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C38C188222EE42E003BE3C8 /* AcronisSample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AcronisSample.xcdatamodel; sourceTree = "<group>"; };
+		4C38C18A222EE438003BE3C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4C38C18D222EE438003BE3C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4C38C18F222EE438003BE3C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C38C194222EE438003BE3C8 /* AcronisSampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcronisSampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C38C198222EE438003BE3C8 /* AcronisSampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcronisSampleTests.swift; sourceTree = "<group>"; };
+		4C38C19A222EE438003BE3C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C38C17A222EE42E003BE3C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C38C191222EE438003BE3C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C38C174222EE42E003BE3C8 = {
+			isa = PBXGroup;
+			children = (
+				4C38C17F222EE42E003BE3C8 /* AcronisSample */,
+				4C38C197222EE438003BE3C8 /* AcronisSampleTests */,
+				4C38C17E222EE42E003BE3C8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C38C17E222EE42E003BE3C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C38C17D222EE42E003BE3C8 /* AcronisSample.app */,
+				4C38C194222EE438003BE3C8 /* AcronisSampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C38C17F222EE42E003BE3C8 /* AcronisSample */ = {
+			isa = PBXGroup;
+			children = (
+				4C38C180222EE42E003BE3C8 /* AppDelegate.swift */,
+				4C38C182222EE42E003BE3C8 /* ViewController.swift */,
+				4C38C184222EE42E003BE3C8 /* Main.storyboard */,
+				4C38C18A222EE438003BE3C8 /* Assets.xcassets */,
+				4C38C18C222EE438003BE3C8 /* LaunchScreen.storyboard */,
+				4C38C18F222EE438003BE3C8 /* Info.plist */,
+				4C38C187222EE42E003BE3C8 /* AcronisSample.xcdatamodeld */,
+			);
+			path = AcronisSample;
+			sourceTree = "<group>";
+		};
+		4C38C197222EE438003BE3C8 /* AcronisSampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C38C198222EE438003BE3C8 /* AcronisSampleTests.swift */,
+				4C38C19A222EE438003BE3C8 /* Info.plist */,
+			);
+			path = AcronisSampleTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C38C17C222EE42E003BE3C8 /* AcronisSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C38C19D222EE438003BE3C8 /* Build configuration list for PBXNativeTarget "AcronisSample" */;
+			buildPhases = (
+				4C38C179222EE42E003BE3C8 /* Sources */,
+				4C38C17A222EE42E003BE3C8 /* Frameworks */,
+				4C38C17B222EE42E003BE3C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AcronisSample;
+			productName = AcronisSample;
+			productReference = 4C38C17D222EE42E003BE3C8 /* AcronisSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C38C193222EE438003BE3C8 /* AcronisSampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C38C1A0222EE438003BE3C8 /* Build configuration list for PBXNativeTarget "AcronisSampleTests" */;
+			buildPhases = (
+				4C38C190222EE438003BE3C8 /* Sources */,
+				4C38C191222EE438003BE3C8 /* Frameworks */,
+				4C38C192222EE438003BE3C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C38C196222EE438003BE3C8 /* PBXTargetDependency */,
+			);
+			name = AcronisSampleTests;
+			productName = AcronisSampleTests;
+			productReference = 4C38C194222EE438003BE3C8 /* AcronisSampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C38C175222EE42E003BE3C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = sample;
+				TargetAttributes = {
+					4C38C17C222EE42E003BE3C8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					4C38C193222EE438003BE3C8 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4C38C17C222EE42E003BE3C8;
+					};
+				};
+			};
+			buildConfigurationList = 4C38C178222EE42E003BE3C8 /* Build configuration list for PBXProject "AcronisSample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C38C174222EE42E003BE3C8;
+			productRefGroup = 4C38C17E222EE42E003BE3C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C38C17C222EE42E003BE3C8 /* AcronisSample */,
+				4C38C193222EE438003BE3C8 /* AcronisSampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C38C17B222EE42E003BE3C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C38C18E222EE438003BE3C8 /* LaunchScreen.storyboard in Resources */,
+				4C38C18B222EE438003BE3C8 /* Assets.xcassets in Resources */,
+				4C38C186222EE42E003BE3C8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C38C192222EE438003BE3C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C38C179222EE42E003BE3C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C38C183222EE42E003BE3C8 /* ViewController.swift in Sources */,
+				4C38C189222EE42E003BE3C8 /* AcronisSample.xcdatamodeld in Sources */,
+				4C38C181222EE42E003BE3C8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C38C190222EE438003BE3C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C38C199222EE438003BE3C8 /* AcronisSampleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C38C196222EE438003BE3C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C38C17C222EE42E003BE3C8 /* AcronisSample */;
+			targetProxy = 4C38C195222EE438003BE3C8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C38C184222EE42E003BE3C8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C38C185222EE42E003BE3C8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C38C18C222EE438003BE3C8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C38C18D222EE438003BE3C8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C38C19B222EE438003BE3C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4C38C19C222EE438003BE3C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C38C19E222EE438003BE3C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WUU6VCFG76;
+				INFOPLIST_FILE = AcronisSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sample.AcronisSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C38C19F222EE438003BE3C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WUU6VCFG76;
+				INFOPLIST_FILE = AcronisSample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sample.AcronisSample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4C38C1A1222EE438003BE3C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WUU6VCFG76;
+				INFOPLIST_FILE = AcronisSampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sample.AcronisSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AcronisSample.app/AcronisSample";
+			};
+			name = Debug;
+		};
+		4C38C1A2222EE438003BE3C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WUU6VCFG76;
+				INFOPLIST_FILE = AcronisSampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sample.AcronisSampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AcronisSample.app/AcronisSample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C38C178222EE42E003BE3C8 /* Build configuration list for PBXProject "AcronisSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C38C19B222EE438003BE3C8 /* Debug */,
+				4C38C19C222EE438003BE3C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C38C19D222EE438003BE3C8 /* Build configuration list for PBXNativeTarget "AcronisSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C38C19E222EE438003BE3C8 /* Debug */,
+				4C38C19F222EE438003BE3C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C38C1A0222EE438003BE3C8 /* Build configuration list for PBXNativeTarget "AcronisSampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C38C1A1222EE438003BE3C8 /* Debug */,
+				4C38C1A2222EE438003BE3C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4C38C187222EE42E003BE3C8 /* AcronisSample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4C38C188222EE42E003BE3C8 /* AcronisSample.xcdatamodel */,
+			);
+			currentVersion = 4C38C188222EE42E003BE3C8 /* AcronisSample.xcdatamodel */;
+			path = AcronisSample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4C38C175222EE42E003BE3C8 /* Project object */;
+}
