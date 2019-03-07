@@ -20,6 +20,8 @@
 		4C38C1BB223194A5003BE3C8 /* NotesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C1BA223194A5003BE3C8 /* NotesFactory.swift */; };
 		4C38C1BD223195B0003BE3C8 /* SQLiteNotesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C1BC223195B0003BE3C8 /* SQLiteNotesRepository.swift */; };
 		4C38C1C02231960F003BE3C8 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C1BF2231960F003BE3C8 /* Errors.swift */; };
+		4C38C1C322319AF4003BE3C8 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C38C1C222319AF4003BE3C8 /* SQLite.framework */; };
+		4C38C1C522319AF7003BE3C8 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C38C1C422319AF7003BE3C8 /* SwiftyBeaver.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		4C38C1BA223194A5003BE3C8 /* NotesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesFactory.swift; sourceTree = "<group>"; };
 		4C38C1BC223195B0003BE3C8 /* SQLiteNotesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteNotesRepository.swift; sourceTree = "<group>"; };
 		4C38C1BF2231960F003BE3C8 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		4C38C1C222319AF4003BE3C8 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = ../Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
+		4C38C1C422319AF7003BE3C8 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = ../Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C38C1C322319AF4003BE3C8 /* SQLite.framework in Frameworks */,
+				4C38C1C522319AF7003BE3C8 /* SwiftyBeaver.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +82,7 @@
 				4C38C17F222EE42E003BE3C8 /* AcronisSample */,
 				4C38C197222EE438003BE3C8 /* AcronisSampleTests */,
 				4C38C17E222EE42E003BE3C8 /* Products */,
+				4C38C1C122319AF4003BE3C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -155,6 +162,15 @@
 				4C38C1BF2231960F003BE3C8 /* Errors.swift */,
 			);
 			path = Errors;
+			sourceTree = "<group>";
+		};
+		4C38C1C122319AF4003BE3C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C38C1C422319AF7003BE3C8 /* SwiftyBeaver.framework */,
+				4C38C1C222319AF4003BE3C8 /* SQLite.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,7 +446,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WUU6VCFG76;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = AcronisSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +466,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WUU6VCFG76;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Carthage/Build/iOS";
 				INFOPLIST_FILE = AcronisSample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
