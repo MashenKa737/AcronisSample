@@ -20,6 +20,7 @@ class SQLiteNotesDatabase {
     init?(path: String) {
         do {
             connection = try Connection(.uri(path), readonly: false)
+            connection.busyTimeout = SQLiteSettings.connectionTimeout
         } catch {
             SwiftyBeaver.warning("Connection to database on path \(path) cannot be open: \(error)")
             return nil

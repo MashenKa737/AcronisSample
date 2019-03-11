@@ -11,10 +11,32 @@ import SwiftyBeaver
 
 class SQLiteNotesRepository: NotesRepository {
 
-    var database: SQLiteNotesDatabase!
-    var databasePath: String!
+    static let shared = SQLiteNotesRepository()
+
+    private var databaseValue: SQLiteNotesDatabase!
+    private let queue = DispatchQueue(label: "SQLiteRepositoryQueue", attributes: .concurrent)
+
+    private var database: SQLiteNotesDatabase! {
+        get {
+            return queue.sync {
+                return databaseValue
+            }
+        }
+        set(value) {
+            queue.async(flags: .barrier) { [unowned self] in
+                self.databaseValue = value
+            }
+        }
+    }
+    private var databasePath: String!
+
+
+    private init() { }
 
     func open() throws {
+        if database != nil {
+            return
+        }
         //TODO: Find out how to create file in directory hirarchy and provide path in init
         guard let databasePath = FileManager.default
             .urls(for: .documentDirectory, in: .userDomainMask)

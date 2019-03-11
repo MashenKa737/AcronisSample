@@ -13,7 +13,8 @@ enum SQLiteSettings {
 
     static let databaseName = "notes_database.sqlite3"
     static let tableName = "notes"
-
+    static let connectionTimeout = 1.0
+    
     enum Columns {
         static let id = Expression<Int64>("id")
         static let text = Expression<String>("text")
