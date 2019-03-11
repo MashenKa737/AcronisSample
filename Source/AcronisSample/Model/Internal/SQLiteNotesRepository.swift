@@ -19,7 +19,7 @@ class SQLiteNotesRepository: NotesRepository {
         guard let databasePath = FileManager.default
             .urls(for: .documentDirectory, in: .userDomainMask)
             .first?
-            .appendingPathComponent("notes_database.sqlite3")
+            .appendingPathComponent(SQLiteSettings.databaseName)
             .absoluteString else {
                 throw NotesRepositoryError.runtimeError("Directory is inaccessible")
         }

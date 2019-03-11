@@ -42,23 +42,23 @@ class SQLiteNotesDatabase {
     }
 
     func update(id: Int64, with attributes: Set<Note.Attributes>) throws {
-        let chosen = table.filter(Note.Columns.id == id)
+        let chosen = table.filter(SQLiteSettings.Columns.id == id)
         var updateStatements: [SQLite.Setter] = attributes.map {
             switch $0 {
             case .text(let text):
-                return Note.Columns.text <- text
+                return SQLiteSettings.Columns.text <- text
             case .image(let image):
-                return Note.Columns.image <- image
+                return SQLiteSettings.Columns.image <- image
             case .sticker(let sticker):
-                return Note.Columns.sticker <- sticker?.value
+                return SQLiteSettings.Columns.sticker <- sticker?.value
             }
         }
-        updateStatements.append(Note.Columns.timeChanged <- Date())
+        updateStatements.append(SQLiteSettings.Columns.timeChanged <- Date())
         try connection.run(chosen.update(updateStatements))
     }
 
     func remove(id: Int64) throws {
-        let chosen = table.filter(Note.Columns.id == id)
+        let chosen = table.filter(SQLiteSettings.Columns.id == id)
         try connection.run(chosen.delete())
     }
 
@@ -73,19 +73,19 @@ fileprivate extension Note {
     static let tableName = "notes"
 
     static func formCreateStatement(table: TableBuilder) {
-        table.column(Columns.id, primaryKey: true)
-        table.column(Columns.text)
-        table.column(Columns.timeChanged)
-        table.column(Columns.image)
-        table.column(Columns.sticker)
+        table.column(SQLiteSettings.Columns.id, primaryKey: true)
+        table.column(SQLiteSettings.Columns.text)
+        table.column(SQLiteSettings.Columns.timeChanged)
+        table.column(SQLiteSettings.Columns.image)
+        table.column(SQLiteSettings.Columns.sticker)
     }
 
     static func parseSelectStep(_ step: Row) throws -> Note {
-        guard let id = try? step.get(Columns.id),
-            let text = try? step.get(Columns.text),
-            let timeChanged = try? step.get(Columns.timeChanged),
-            let image = try? step.get(Columns.image),
-            let sticker = try? step.get(Columns.sticker) else {
+        guard let id = try? step.get(SQLiteSettings.Columns.id),
+            let text = try? step.get(SQLiteSettings.Columns.text),
+            let timeChanged = try? step.get(SQLiteSettings.Columns.timeChanged),
+            let image = try? step.get(SQLiteSettings.Columns.image),
+            let sticker = try? step.get(SQLiteSettings.Columns.sticker) else {
                 SwiftyBeaver.error("Error in value conversion")
                 throw NotesRepositoryError.parseError
         }
@@ -103,24 +103,17 @@ fileprivate extension Note {
 
     func formInsert(to table: Table) -> Insert {
         return table.insert(
-            Columns.text <- text,
-            Columns.timeChanged <- timeChanged,
-            Columns.image <- image,
-            Columns.sticker <- sticker?.value
+            SQLiteSettings.Columns.text <- text,
+            SQLiteSettings.Columns.timeChanged <- timeChanged,
+            SQLiteSettings.Columns.image <- image,
+            SQLiteSettings.Columns.sticker <- sticker?.value
         )
-    }
-
-    enum Columns {
-        static let id = Expression<Int64>("id")
-        static let text = Expression<String>("text")
-        static let timeChanged = Expression<Date>("timeChanged")
-        static let image = Expression<UIImage?>("image")
-        static let sticker = Expression<String?>("sticker")
     }
 
 }
 
 fileprivate extension Sticker {
+
     static func fromRawValue(_ value: String) -> Sticker? {
         switch value {
         case "attention":
@@ -139,6 +132,7 @@ fileprivate extension Sticker {
             return nil
         }
     }
+    
     var value: String {
         switch self {
         case .attention:
@@ -155,6 +149,7 @@ fileprivate extension Sticker {
             return "sad"
         }
     }
+
 }
 
 extension UIImage: Value {
