@@ -8,10 +8,12 @@
 
 public protocol NotesRepository {
 
+    func open() throws
     func listAllNotes() throws -> [Note]
     func saveNew(note: Note) throws
     func update(note: Note, attributes: Set<Note.Attributes>) throws
     func remove(note: Note) throws
     func removeAll() throws
+    func destroy() throws
 
 }

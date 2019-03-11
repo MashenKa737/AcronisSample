@@ -10,17 +10,17 @@ import UIKit
 
 public class Note {
 
-    let id: Int32?
+    let id: Int64?
     public let text: String
     public let timeChanged: Date
     public let image: UIImage?
     public let sticker: Sticker?
 
-    public convenience init(text: String, timeChanged: Date, image: UIImage? = nil, sticker: Sticker? = nil) {
-        self.init(id: nil, text: text, timeChanged: timeChanged, image: image, sticker: sticker)
+    public convenience init(text: String, image: UIImage? = nil, sticker: Sticker? = nil) {
+        self.init(id: nil, text: text, timeChanged: Date(), image: image, sticker: sticker)
     }
 
-    init(id: Int32?, text: String, timeChanged: Date, image: UIImage? = nil, sticker: Sticker? = nil) {
+    init(id: Int64?, text: String, timeChanged: Date, image: UIImage? = nil, sticker: Sticker? = nil) {
         self.id = id
         self.text = text
         self.timeChanged = timeChanged
@@ -30,7 +30,6 @@ public class Note {
 
     public enum Attributes: Hashable {
         case text(String)
-        case timeChanged(Date)
         case image(UIImage?)
         case sticker(Sticker?)
     }

@@ -8,6 +8,7 @@
 
 public enum NotesRepositoryError: Error {
     case runtimeError(String)
+    case invalidUsage
     case queryError
     case parseError
 }

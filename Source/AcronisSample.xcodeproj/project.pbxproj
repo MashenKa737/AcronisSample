@@ -22,6 +22,7 @@
 		4C38C1C02231960F003BE3C8 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C1BF2231960F003BE3C8 /* Errors.swift */; };
 		4C38C1C322319AF4003BE3C8 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C38C1C222319AF4003BE3C8 /* SQLite.framework */; };
 		4C38C1C522319AF7003BE3C8 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C38C1C422319AF7003BE3C8 /* SwiftyBeaver.framework */; };
+		4C38C1CA22369EF6003BE3C8 /* SQLiteNotesDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C1C922369EF6003BE3C8 /* SQLiteNotesDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		4C38C1BF2231960F003BE3C8 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		4C38C1C222319AF4003BE3C8 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = ../Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
 		4C38C1C422319AF7003BE3C8 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = ../Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
+		4C38C1C922369EF6003BE3C8 /* SQLiteNotesDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteNotesDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				4C38C1BC223195B0003BE3C8 /* SQLiteNotesRepository.swift */,
+				4C38C1C922369EF6003BE3C8 /* SQLiteNotesDatabase.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				4C38C179222EE42E003BE3C8 /* Sources */,
 				4C38C17A222EE42E003BE3C8 /* Frameworks */,
 				4C38C17B222EE42E003BE3C8 /* Resources */,
+				4C38C1C822368CF1003BE3C8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -269,6 +273,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4C38C1C822368CF1003BE3C8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/../Carthage/Build/iOS/SQLite.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/SwiftyBeaver.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4C38C179222EE42E003BE3C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -280,6 +306,7 @@
 				4C38C1BB223194A5003BE3C8 /* NotesFactory.swift in Sources */,
 				4C38C183222EE42E003BE3C8 /* ViewController.swift in Sources */,
 				4C38C1B522318C39003BE3C8 /* NotesRepository.swift in Sources */,
+				4C38C1CA22369EF6003BE3C8 /* SQLiteNotesDatabase.swift in Sources */,
 				4C38C189222EE42E003BE3C8 /* AcronisSample.xcdatamodeld in Sources */,
 				4C38C1C02231960F003BE3C8 /* Errors.swift in Sources */,
 				4C38C181222EE42E003BE3C8 /* AppDelegate.swift in Sources */,
