@@ -28,8 +28,6 @@ class SQLiteNotesRepository: NotesRepository {
             }
         }
     }
-    private var databasePath: String!
-
 
     private init() { }
 
@@ -48,7 +46,6 @@ class SQLiteNotesRepository: NotesRepository {
         guard let database = SQLiteNotesDatabase(path: databasePath) else {
             throw NotesRepositoryError.runtimeError("Cannot open file at path: \(databasePath)")
         }
-        self.databasePath = databasePath
         self.database = database
     }
 
@@ -87,13 +84,12 @@ class SQLiteNotesRepository: NotesRepository {
 
     func destroy() throws {
         try checkWasInitialized()
-        try FileManager.default.removeItem(atPath: databasePath)
+        try FileManager.default.removeItem(atPath: database.path)
         database = nil
-        databasePath = nil
     }
 
     private func checkWasInitialized() throws {
-        if database == nil || databasePath == nil {
+        if database == nil {
             let error = NotesRepositoryError.invalidUsage
             SwiftyBeaver.error(error)
             throw error
