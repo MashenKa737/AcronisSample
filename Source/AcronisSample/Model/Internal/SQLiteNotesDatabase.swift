@@ -13,16 +13,16 @@ import SwiftyBeaver
 
 class SQLiteNotesDatabase {
 
-    let path: String
+    let path: URL
 
     //From docs: "Every Connection comes equipped with its own serial queue for statement execution and can be safely accessed across threads. Threads that open transactions and savepoints will block other threads from executing statements while the transaction is open."
     private let connection: Connection
     private let table: Table
 
-    init?(path: String) {
+    init?(path: URL) {
         self.path = path
         do {
-            connection = try Connection(.uri(path), readonly: false)
+            connection = try Connection(.uri(path.absoluteString), readonly: false)
             connection.busyTimeout = SQLiteSettings.connectionTimeout
         } catch {
             SwiftyBeaver.warning("Connection to database on path \(path) cannot be open: \(error)")

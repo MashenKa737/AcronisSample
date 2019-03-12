@@ -39,8 +39,7 @@ class SQLiteNotesRepository: NotesRepository {
         guard let databasePath = FileManager.default
             .urls(for: .documentDirectory, in: .userDomainMask)
             .first?
-            .appendingPathComponent(SQLiteSettings.databaseName)
-            .absoluteString else {
+            .appendingPathComponent(SQLiteSettings.databaseName) else {
                 throw NotesRepositoryError.runtimeError("Directory is inaccessible")
         }
         guard let database = SQLiteNotesDatabase(path: databasePath) else {
@@ -84,7 +83,7 @@ class SQLiteNotesRepository: NotesRepository {
 
     func destroy() throws {
         try checkWasInitialized()
-        try FileManager.default.removeItem(atPath: database.path)
+        try FileManager.default.removeItem(at: database.path)
         database = nil
     }
 
