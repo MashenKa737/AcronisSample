@@ -46,6 +46,10 @@ class SQLiteNotesDatabase {
     }
 
     func update(id: Int64, with attributes: Set<Note.Attributes>) throws {
+        guard (try? getById(id: id)) != nil else {
+            SwiftyBeaver.error("Trying to update not existing entity (it probably was deleted)")
+            throw NotesRepositoryError.queryError
+        }
         let chosen = table.filter(SQLiteSettings.Columns.id == id)
         var updateStatements: [SQLite.Setter] = attributes.map {
             switch $0 {
@@ -61,7 +65,19 @@ class SQLiteNotesDatabase {
         try connection.run(chosen.update(updateStatements))
     }
 
+    func getById(id: Int64) throws -> Note  {
+        guard let fetched = try connection.pluck(table.filter(SQLiteSettings.Columns.id == id)) else {
+            SwiftyBeaver.error("No such entity")
+            throw NotesRepositoryError.queryError
+        }
+        return try Note.parseSelectStep(fetched)
+    }
+
     func remove(id: Int64) throws {
+        guard (try? getById(id: id)) != nil else {
+            SwiftyBeaver.error("Trying to delete not existing entity (it probably was deleted before)")
+            throw NotesRepositoryError.queryError
+        }
         let chosen = table.filter(SQLiteSettings.Columns.id == id)
         try connection.run(chosen.delete())
     }
