@@ -11,22 +11,40 @@ import SwiftyBeaver
 
 class SQLiteNotesRepository: NotesRepository {
 
-    var database: SQLiteNotesDatabase!
-    var databasePath: String!
+    static let shared = SQLiteNotesRepository()
+
+    private var databaseValue: SQLiteNotesDatabase!
+    private let queue = DispatchQueue(label: "SQLiteRepositoryQueue", attributes: .concurrent)
+
+    private var database: SQLiteNotesDatabase! {
+        get {
+            return queue.sync {
+                return databaseValue
+            }
+        }
+        set(value) {
+            queue.async(flags: .barrier) { [unowned self] in
+                self.databaseValue = value
+            }
+        }
+    }
+
+    private init() { }
 
     func open() throws {
+        if database != nil {
+            return
+        }
         //TODO: Find out how to create file in directory hirarchy and provide path in init
         guard let databasePath = FileManager.default
             .urls(for: .documentDirectory, in: .userDomainMask)
             .first?
-            .appendingPathComponent(SQLiteSettings.databaseName)
-            .absoluteString else {
+            .appendingPathComponent(SQLiteSettings.databaseName) else {
                 throw NotesRepositoryError.runtimeError("Directory is inaccessible")
         }
         guard let database = SQLiteNotesDatabase(path: databasePath) else {
             throw NotesRepositoryError.runtimeError("Cannot open file at path: \(databasePath)")
         }
-        self.databasePath = databasePath
         self.database = database
     }
 
@@ -65,13 +83,12 @@ class SQLiteNotesRepository: NotesRepository {
 
     func destroy() throws {
         try checkWasInitialized()
-        try FileManager.default.removeItem(atPath: databasePath)
+        try FileManager.default.removeItem(at: database.path)
         database = nil
-        databasePath = nil
     }
 
     private func checkWasInitialized() throws {
-        if database == nil || databasePath == nil {
+        if database == nil {
             let error = NotesRepositoryError.invalidUsage
             SwiftyBeaver.error(error)
             throw error

@@ -13,13 +13,17 @@ import SwiftyBeaver
 
 class SQLiteNotesDatabase {
 
+    let path: URL
+
     //From docs: "Every Connection comes equipped with its own serial queue for statement execution and can be safely accessed across threads. Threads that open transactions and savepoints will block other threads from executing statements while the transaction is open."
     private let connection: Connection
     private let table: Table
 
-    init?(path: String) {
+    init?(path: URL) {
+        self.path = path
         do {
-            connection = try Connection(.uri(path), readonly: false)
+            connection = try Connection(.uri(path.absoluteString), readonly: false)
+            connection.busyTimeout = SQLiteSettings.connectionTimeout
         } catch {
             SwiftyBeaver.warning("Connection to database on path \(path) cannot be open: \(error)")
             return nil
@@ -42,6 +46,10 @@ class SQLiteNotesDatabase {
     }
 
     func update(id: Int64, with attributes: Set<Note.Attributes>) throws {
+        guard (try? getById(id: id)) != nil else {
+            SwiftyBeaver.error("Trying to update not existing entity (it probably was deleted)")
+            throw NotesRepositoryError.queryError
+        }
         let chosen = table.filter(SQLiteSettings.Columns.id == id)
         var updateStatements: [SQLite.Setter] = attributes.map {
             switch $0 {
@@ -57,7 +65,19 @@ class SQLiteNotesDatabase {
         try connection.run(chosen.update(updateStatements))
     }
 
+    func getById(id: Int64) throws -> Note  {
+        guard let fetched = try connection.pluck(table.filter(SQLiteSettings.Columns.id == id)) else {
+            SwiftyBeaver.error("No such entity")
+            throw NotesRepositoryError.queryError
+        }
+        return try Note.parseSelectStep(fetched)
+    }
+
     func remove(id: Int64) throws {
+        guard (try? getById(id: id)) != nil else {
+            SwiftyBeaver.error("Trying to delete not existing entity (it probably was deleted before)")
+            throw NotesRepositoryError.queryError
+        }
         let chosen = table.filter(SQLiteSettings.Columns.id == id)
         try connection.run(chosen.delete())
     }
@@ -151,17 +171,4 @@ fileprivate extension Sticker {
     }
 
 }
-
-extension UIImage: Value {
-    public class var declaredDatatype: String {
-        return Blob.declaredDatatype
-    }
-    public class func fromDatatypeValue(_ blobValue: Blob) -> UIImage {
-        return UIImage(data: Data(bytes: blobValue.bytes))!
-    }
-    public var datatypeValue: Blob {
-        return Blob(bytes: Array(pngData() ?? Data()))
-    }
-}
-
 

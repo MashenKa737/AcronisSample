@@ -24,7 +24,7 @@
 		4C38C1C522319AF7003BE3C8 /* SwiftyBeaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C38C1C422319AF7003BE3C8 /* SwiftyBeaver.framework */; };
 		4C38C1CA22369EF6003BE3C8 /* SQLiteNotesDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C1C922369EF6003BE3C8 /* SQLiteNotesDatabase.swift */; };
 		4C38C1CC2236B17C003BE3C8 /* SQLiteSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C1CB2236B17C003BE3C8 /* SQLiteSettings.swift */; };
-		4C38C1CE2236B509003BE3C8 /* SQLiteTypesConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C1CD2236B509003BE3C8 /* SQLiteTypesConversionTests.swift */; };
+		4C38C1D022381C1A003BE3C8 /* DatabaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C38C1CF22381C1A003BE3C8 /* DatabaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,7 @@
 		4C38C1C422319AF7003BE3C8 /* SwiftyBeaver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyBeaver.framework; path = ../Carthage/Build/iOS/SwiftyBeaver.framework; sourceTree = "<group>"; };
 		4C38C1C922369EF6003BE3C8 /* SQLiteNotesDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteNotesDatabase.swift; sourceTree = "<group>"; };
 		4C38C1CB2236B17C003BE3C8 /* SQLiteSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteSettings.swift; sourceTree = "<group>"; };
-		4C38C1CD2236B509003BE3C8 /* SQLiteTypesConversionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteTypesConversionTests.swift; sourceTree = "<group>"; };
+		4C38C1CF22381C1A003BE3C8 /* DatabaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +121,7 @@
 			children = (
 				4C38C19A222EE438003BE3C8 /* Info.plist */,
 				4C38C198222EE438003BE3C8 /* AcronisSampleTests.swift */,
-				4C38C1CD2236B509003BE3C8 /* SQLiteTypesConversionTests.swift */,
+				4C38C1CF22381C1A003BE3C8 /* DatabaseTests.swift */,
 			);
 			path = AcronisSampleTests;
 			sourceTree = "<group>";
@@ -324,7 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C38C1CE2236B509003BE3C8 /* SQLiteTypesConversionTests.swift in Sources */,
+				4C38C1D022381C1A003BE3C8 /* DatabaseTests.swift in Sources */,
 				4C38C199222EE438003BE3C8 /* AcronisSampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

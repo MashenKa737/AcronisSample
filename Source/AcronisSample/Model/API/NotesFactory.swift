@@ -13,7 +13,7 @@ public class NotesFactory {
     }
 
     public static func createRepository(type: RepositoryType = .sqLiteBased) -> NotesRepository {
-        return SQLiteNotesRepository()
+        return SQLiteNotesRepository.shared
     }
 
 }
