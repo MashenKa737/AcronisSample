@@ -156,16 +156,3 @@ fileprivate extension Sticker {
 
 }
 
-extension UIImage: Value {
-    public class var declaredDatatype: String {
-        return Blob.declaredDatatype
-    }
-    public class func fromDatatypeValue(_ blobValue: Blob) -> UIImage {
-        return UIImage(data: Data(bytes: blobValue.bytes))!
-    }
-    public var datatypeValue: Blob {
-        return Blob(bytes: Array(pngData() ?? Data()))
-    }
-}
-
-
